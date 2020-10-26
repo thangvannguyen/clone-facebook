@@ -1,0 +1,220 @@
+$primary-color: #1c1e21;
+$bg-opacity: rgba(36, 37, 38, 1);
+$bg-opacity-07: rgba(36, 37, 38, 0.7);
+$blue-icon: #2d88ff;
+$bg-popover: rgba(231, 232, 233, 0.7);
+
+.header {
+    background-color: $bg-opacity;
+    border-bottom: 2px solid $bg-opacity-07;
+    position: sticky;
+    z-index: 99;
+    top: 0;
+}
+.header-search {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 1rem;
+}
+.header-search-logo {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.header-input_search {
+    position: relative;
+    width: 100%;
+}
+.header-input_search > input {
+    height: 40px;
+    padding-left: 34px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(58, 59, 60, 1);
+    outline: none;
+    color: #bbb;
+    width: 100%;
+    font-family: "Open Sans", "Segoe UI", "Roboto";
+}
+.header-input_search > input::placeholder {
+    color: #bbbbbbee;
+    font-family: "Open Sans", "Segoe UI", "Roboto";
+    font-weight: 400;
+    font-size: 0.9em;
+}
+.header-input_search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-48%);
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #bbbbbbee;
+}
+
+.header-menu {
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    max-width: 60%;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+.header-menu-icon {
+    color: #b0b3b8;
+    border-radius: 8px;
+    margin: 0 3px;
+    width: 100%;
+    font-size: 1.5em;
+    height: 100%;
+    cursor: pointer;
+}
+
+.header-menu-icon:hover {
+    background-color: rgba(58, 59, 60, 1);
+    transition: all 0.5ms;
+}
+
+.header-menu-icon svg {
+    align-self: center;
+    height: 100%;
+    text-align: center;
+    fill: #b0b3b8;
+}
+.header-menu-icon.header-menu-active:hover {
+    background-color: #242526;
+}
+.header-menu-active {
+    position: relative;
+    color: $blue-icon;
+    & svg {
+        fill: $blue-icon;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: $blue-icon;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+    }
+}
+.header-popover {
+    width: 20%;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+.header-badge {
+    position: absolute;
+    top: 25%;
+    right: 25%;
+    transform: translate(-25%, -25%);
+    & .ant-badge-count {
+        min-width: 17px;
+        height: 17px;
+        padding: 0 4px;
+        line-height: 17px;
+        background: #f02849;
+        font-weight: 600;
+    }
+}
+
+.ant-popover-inner {
+    border-radius: 5px;
+    color: #242526;
+    background-color: $bg-popover;
+}
+.ant-popover-placement-bottom > .ant-popover-content > .ant-popover-arrow {
+    border-top-color: $bg-popover;
+    border-left-color: $bg-popover;
+}
+.header-setting-popover {
+    position: relative;
+    cursor: pointer;
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5) {
+        padding-top: 4px;
+    }
+}
+.header-setting {
+    padding: 5px 1rem 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.header-setting-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    color: #e4e6eb;
+    font-weight: 700;
+    border-radius: 50%;
+    background-color: rgba(58, 59, 60, 1);
+    &:hover {
+        background-color: rgba(88, 88, 88, 1);
+        transition: all 0.5ms;
+    }
+    & svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        fill: #e4e6eb;
+    }
+}
+
+.header-setting-account {
+    padding: 5px;
+    &:hover {
+        background-color: rgba(58, 59, 60, 1);
+        border-radius: 25px;
+    }
+    &-avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    &-name {
+        color: #e4e6eb;
+        align-self: center;
+        vertical-align: middle;
+        padding: 5px 10px 0 5px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
+
+.header-setting-badge {
+    position: absolute;
+    top: -5%;
+    right: -15%;
+    transform: translate(-5%, -5%);
+    & .ant-badge-count {
+        min-width: 17px;
+        height: 17px;
+        padding: 0 4px;
+        line-height: 17px;
+        background: #f02849;
+        font-weight: 600;
+    }
+}
+@media (max-width: 800px) {
+    .header-menu-icon:hover {
+        background-color: transparent;
+        transition: all 0.5ms;
+    }
+    .header-menu {
+        max-width: 100%;
+    }
+}

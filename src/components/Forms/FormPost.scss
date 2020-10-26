@@ -1,0 +1,225 @@
+.dialog-post {
+    & .MuiPaper-root {
+        border-radius: 10px;
+        background: rgba(36, 37, 38, 1);
+        opacity: 1;
+        z-index: 99;
+        color: #fff;
+        border: 1.5px solid #3a3a3a61;
+    }
+    & .MuiDialog-paper .MuiDialogContent-root {
+        &::-webkit-scrollbar {
+            width: 10px;
+            // height: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: none;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #3a3b3c;
+            border-radius: 10px;
+            transition: all 0.8s ease;
+        }
+
+        &:hover &::-webkit-scrollbar-thumb {
+            background: #3a3b3c;
+        }
+    }
+}
+.form-post-modal {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 500px;
+    & .info-post {
+        display: flex;
+        justify-content: flex-start;
+        & .info-post-avatar {
+            & img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 12px;
+            }
+        }
+        & .info-post-name-select {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+        }
+        & .info-post-select .MuiInputBase-root {
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: none;
+            background: #65656594;
+            height: 24px;
+            padding: 6px 9px 5px;
+            border-radius: 6px;
+            margin-top: 5px;
+        }
+        & .info-post-select .MuiInput-underline {
+            border: none;
+            border-bottom: none;
+        }
+    }
+    & .info-content {
+        width: 100%;
+        min-height: 30vh;
+        cursor: text;
+        & .info-content-text {
+            width: 100%;
+            padding-bottom: 24px;
+            outline: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+    }
+}
+.btn-add-post {
+    background-color: #2d88ff;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    color: #fff;
+    text-transform: capitalize;
+    padding: 8px;
+    margin: 8px;
+    cursor: pointer;
+}
+.post-feed-bottom-more {
+    width: 100%;
+    padding: 6px 6px;
+    border: 1px solid #3a3a3a61;
+    border-radius: 6px;
+}
+.placeholder-form-post {
+    color: #90949c;
+}
+.list-file-post {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    cursor: pointer;
+    margin-bottom: 10px;
+    max-height: 40vh;
+    &::-webkit-scrollbar {
+        width: 10px;
+        // height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: none;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #3a3b3c;
+        border-radius: 10px;
+        transition: all 0.8s ease;
+    }
+
+    &:hover &::-webkit-scrollbar-thumb {
+        background: #3a3b3c;
+    }
+    & .image-file-post {
+        width: 100%;
+        height: calc(100% / 100 * 180);
+        overflow: hidden;
+        max-width: 500px;
+        max-height: 500px;
+        border-radius: 10px;
+        margin-bottom: 1%;
+        flex: none;
+        position: relative;
+        transition: all 800ms ease;
+        &::before {
+            content: "";
+            position: absolute;
+            background: rgba(1, 1, 1, 0.05);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0;
+        }
+        &:hover::before {
+            opacity: 1;
+        }
+
+        & img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        & span {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            z-index: 2;
+            cursor: pointer;
+            transition: all 500ms ease;
+            &:hover {
+                transform: scale(1.3);
+                color: #fff;
+            }
+        }
+    }
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.loading-upload-file.loading {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 250px;
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .dialog-post .MuiPaper-root {
+        border-radius: 0px;
+        border: 0px solid #3a3a3a61;
+        width: 100vw;
+        min-height: 500px;
+        margin: 0;
+    }
+    .form-post-modal {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .post-feed-bottom .post-feed-bottom-item .post-feed-bottom-item-image {
+        width: 20px;
+        height: 20px;
+    }
+    .post-feed-bottom .post-feed-bottom-item .post-feed-bottom-item-text {
+        font-size: 0.7em;
+        font-weight: 700;
+    }
+}

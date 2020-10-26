@@ -1,0 +1,80 @@
+.form-signup {
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+}
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 16px;
+    border-bottom: 1px solid #dadde1;
+    .text-header h3 {
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    .btn-icon-close {
+        cursor: pointer;
+    }
+}
+.form-body {
+    padding: 20px 16px 0px 16px;
+    .input-form-signup {
+        background: #ffffff;
+        border: 1px solid #dddfe2;
+        color: #1d2129;
+        line-height: 16px;
+        padding: 0.5rem;
+        vertical-align: middle;
+        border-radius: 4px;
+        width: 100%;
+        outline: none;
+        margin-bottom: 0vh;
+        font-size: 1rem;
+        &:focus {
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+            caret-color: #1877f2;
+        }
+    }
+    .icon-show {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.8rem;
+        cursor: pointer;
+    }
+    .text-rules {
+        font-size: 11px;
+        text-align: justify;
+    }
+    .btn-action-signup {
+        height: 100%;
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 0.4rem 3rem;
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+        background-color: #36a420;
+        color: #fff;
+        outline: none;
+        transition: all 600ms ease;
+        &:hover {
+            background-color: #288f13;
+        }
+    }
+}
+.makeStyles-modal-1 .MuiBackdrop-root {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+@media (max-width: 800px) {
+    .form-signup {
+        max-width: 98%;
+    }
+}

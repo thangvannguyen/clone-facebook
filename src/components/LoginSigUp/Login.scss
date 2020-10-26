@@ -1,0 +1,144 @@
+.bg-page-login {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    font-family: Helvetica, Arial, sans-serif;
+    & .page-login {
+        padding-top: 16vh;
+        width: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & .page-login-left {
+            width: 60%;
+            padding-right: 5%;
+            & .page-login-logo {
+                text-align: left;
+                color: #1877f2;
+                font-size: 70px;
+                font-weight: 700;
+                letter-spacing: -3px;
+            }
+        }
+        & .page-login-right {
+            width: 40%;
+            min-height: 50vh;
+            align-items: center;
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            margin: 40px 0 0;
+            padding: 20px 0 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            & .btn-login {
+                width: 90%;
+                font-weight: 700;
+                font-size: 1.2rem;
+                padding: 0.8rem;
+                border: none;
+                border-radius: 6px;
+                text-align: center;
+                background-color: #1877f2;
+                color: #fff;
+                outline: none;
+                transition: all 600ms ease;
+                &:hover {
+                    background-color: #0e67db;
+                }
+            }
+            & .btn-signup {
+                font-weight: 700;
+                font-size: 1rem;
+                padding: 0.8rem;
+                border: none;
+                border-radius: 6px;
+                text-align: center;
+                background-color: #36a420;
+                color: #fff;
+                outline: none;
+                transition: all 600ms ease;
+                &:hover {
+                    background-color: #288f13;
+                }
+            }
+            & .input-form-login {
+                background: #ffffff;
+                border: 1px solid #dddfe2;
+                color: #1d2129;
+                font-size: 1.2rem;
+                line-height: 16px;
+                padding: 0.8rem;
+                vertical-align: middle;
+                border-radius: 6px;
+                width: 100%;
+                outline: none;
+                margin-bottom: 2vh;
+                &:focus {
+                    border-color: #1877f2;
+                    box-shadow: 0 0 0 2px #e7f3ff;
+                    caret-color: #1877f2;
+                }
+            }
+            & .form-show {
+                position: relative;
+                width: 90%;
+                & .icon-show {
+                    position: absolute;
+                    right: 5%;
+                    top: 25%;
+                    cursor: pointer;
+                }
+            }
+            & .link-forget-pass {
+                font-size: 0.9rem;
+                font-weight: 400;
+                color: #1877f2;
+                padding-top: 3vh;
+                transition: all 600ms ease;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            & .line-form {
+                align-items: center;
+                border-bottom: 1px solid #dadde1;
+                display: flex;
+                margin: 3vh auto;
+                text-align: center;
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .bg-page-login .page-login {
+        flex-direction: column;
+        width: 100%;
+    }
+    .bg-page-login .page-login .page-login-left {
+        width: 100%;
+        text-align: center;
+        & .page-login-intro-text {
+            font-size: 1rem;
+        }
+    }
+    .bg-page-login .page-login .page-login-left .page-login-logo {
+        text-align: center;
+    }
+    .bg-page-login .page-login .page-login-right {
+        width: 96%;
+    }
+    .bg-page-login .page-login {
+        padding-top: 1vh;
+    }
+}

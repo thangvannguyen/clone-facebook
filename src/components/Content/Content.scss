@@ -1,0 +1,230 @@
+$bg-sider: rgb(24, 25, 26);
+$blue-icon: #2d88ff;
+.content-fluid {
+    width: 100%;
+    height: 100%;
+    background-color: $bg-sider;
+    padding-top: 1rem;
+    padding-top: 1rem;
+}
+.content-container {
+    margin: auto;
+    padding-top: 5px;
+    max-width: 70%;
+    height: 100%;
+}
+.list-feed-new {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    height: 28vh;
+    max-height: 30vh;
+    overflow: hidden;
+    margin: auto;
+    & .feed-new {
+        width: 19%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+        transition: all 2s cubic-bezier(1, 0.36, 0.74, 1.03);
+        &:hover .feed-new-image {
+            transform: scale(1.02);
+        }
+        & .feed-new-image {
+            object-fit: cover;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: scale(1);
+        }
+        & .feed-new-background_content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), transparent);
+            cursor: pointer;
+            & .feed-new-background_content-text {
+                position: absolute;
+                z-index: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+                text-align: center;
+                font-size: 80%;
+                font-weight: 600;
+                color: #e4e6eb;
+                max-height: 80%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        &:hover .feed-new-background_content {
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), transparent);
+        }
+
+        & .feed-new-avatar {
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            overflow: hidden;
+            border-radius: 50%;
+            top: 10px;
+            left: 10px;
+            border: 3px solid $blue-icon;
+            cursor: pointer;
+            & img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        & .feed-new-name_user {
+            position: absolute;
+            width: 100%;
+            bottom: 5px;
+            margin: auto;
+            text-align: left;
+            font-size: 1rem;
+            padding: 0 10px;
+            font-weight: 600;
+            color: #e4e6eb;
+            cursor: pointer;
+        }
+
+        & .feed-new-name_user-bg {
+            text-align: center;
+            background-color: #242526;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-bottom: 5px;
+            padding-top: 20%;
+            height: 25%;
+        }
+        & .feed-new-image-add {
+            object-fit: cover;
+            width: 100%;
+            height: 75%;
+        }
+        & .feed-new-icon_plus {
+            position: absolute;
+            bottom: 25%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #e4e6eb;
+            cursor: pointer;
+            & span {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 4px solid #242526;
+                background-color: $blue-icon;
+                & svg {
+                    padding-top: 14%;
+                    padding-left: 3%;
+                    width: 27px;
+                    height: 27px;
+                }
+            }
+        }
+    }
+}
+.post-feed-new {
+    // max-width: 86%;
+    max-width: 95%;
+    margin: auto;
+    padding-top: 1rem;
+}
+
+@media (max-width: 800px) {
+    .container-fluid-bg {
+        height: 100%;
+    }
+    .header-menu {
+        max-width: 100%;
+    }
+    .list-feed-new {
+        height: 27vh;
+        max-height: 30vh;
+        min-height: 200px;
+        overflow-x: scroll;
+        padding: 3% 1%;
+        &::-webkit-scrollbar {
+            height: 0px;
+        }
+        &::-webkit-scrollbar-track {
+            background: none;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #3a3b3c;
+            border-radius: 10px;
+            transition: all 0.8s ease;
+        }
+    }
+    .content-container {
+        max-width: 100%;
+        & .list-feed-new .feed-new {
+            width: 28%;
+            flex-shrink: 0;
+            margin: 0 1%;
+            border: 1px solid rgba(176, 179, 184, 0.5);
+            transition: all 200ms ease;
+            &:hover {
+                transform: scale(1.05);
+                z-index: 99;
+            }
+        }
+    }
+    .post-feed-new {
+        max-width: 100%;
+    }
+    .post-feed-new .post {
+        border-radius: 0px;
+    }
+    .post-feed-new .post-feed {
+        max-width: 100%;
+        border-radius: 0px;
+    }
+    .post-feed-new .post-feed {
+        padding: 16px 10px 16px 10px;
+        & .post-feed-bottom .post-feed-bottom-item .post-feed-bottom-item-text {
+            font-size: 0.6em;
+            font-weight: 700;
+        }
+        & .post-feed-bottom .post-feed-bottom-item .post-feed-bottom-item-image {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .post-feed-new .post .post-header {
+        padding: 12px 10px 0px 10px;
+    }
+    .post .post-content {
+        & .post-content-action,
+        & .post-content-comment {
+            margin: 10px;
+        }
+        & .post-content-text {
+            padding: 4px 10px 16px;
+        }
+        .post-content-action .action .action-btn {
+            border-top: 1px solid rgba(176, 179, 184, 0.2);
+            border-bottom: 1px solid rgba(176, 179, 184, 0.2);
+        }
+    }
+    .post-feed-new .post .post-content-comment .comment {
+        display: flex; // Dùng để ẩn các comment ở dưới điện thoại
+    }
+    .post-feed-new .post .post-content-comment .comment .comment-content .comment-content-text {
+        background-color: rgba(58, 59, 60, 0.5);
+    }
+    .post-feed-new .post .post-content-comment .input-comment .input-comment-text {
+        background-color: rgba(58, 59, 60, 0.4);
+    }
+}
